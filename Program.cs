@@ -12,27 +12,78 @@ namespace TicTacToe
 		{
 			Console.SetWindowSize(60, 30);
 			ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+			//while (keyInfo.Key != ConsoleKey.Escape)
+			//{
+			//	keyInfo = Console.ReadKey(true);
+			//	if (keyInfo.Key == ConsoleKey.UpArrow)
+			//	{
+			//		Console.SetCursorPosition(Console.CursorLeft , Console.CursorTop - 1);
+			//	}
+			//	else if (keyInfo.Key == ConsoleKey.DownArrow)
+			//	{
+			//		Console.SetCursorPosition(Console.CursorLeft , Console.CursorTop + 1);
+			//	}
+			//	else if (keyInfo.Key == ConsoleKey.LeftArrow)
+			//	{
+			//		Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+			//	}
+			//	else if (keyInfo.Key == ConsoleKey.RightArrow)
+			//	{
+			//		Console.SetCursorPosition(Console.CursorLeft +1 , Console.CursorTop);
+			//	}
+			//}
 			while (keyInfo.Key != ConsoleKey.Escape)
 			{
 				keyInfo = Console.ReadKey(true);
-				if (keyInfo.Key == ConsoleKey.UpArrow)
+				if (keyInfo.Key != ConsoleKey.NumPad1)
 				{
-					Console.SetCursorPosition(Console.CursorLeft , Console.CursorTop - 1);
+					Console.SetCursorPosition(Console.CursorLeft + 0, Console.CursorTop + 0);
+					
 				}
-				else if (keyInfo.Key == ConsoleKey.DownArrow)
+				else if (keyInfo.Key != ConsoleKey.NumPad2)
 				{
-					Console.SetCursorPosition(Console.CursorLeft , Console.CursorTop + 1);
+					Console.SetCursorPosition(Console.CursorLeft + 0, Console.CursorTop + 2);
+					
 				}
-				else if (keyInfo.Key == ConsoleKey.LeftArrow)
+				else if (keyInfo.Key != ConsoleKey.NumPad3)
 				{
-					Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+					Console.SetCursorPosition(Console.CursorLeft + 0, Console.CursorTop + 4);
+					
 				}
-				else if (keyInfo.Key == ConsoleKey.RightArrow)
+				else if (keyInfo.Key != ConsoleKey.NumPad4)
 				{
-					Console.SetCursorPosition(Console.CursorLeft +1 , Console.CursorTop);
+					Console.SetCursorPosition(Console.CursorLeft + 2, Console.CursorTop + 0);
+					
 				}
+				else if (keyInfo.Key != ConsoleKey.NumPad5)
+				{
+					Console.SetCursorPosition(Console.CursorLeft + 2, Console.CursorTop + 2);
+					
+				}
+				else if (keyInfo.Key != ConsoleKey.NumPad6)
+				{
+					Console.SetCursorPosition(Console.CursorLeft + 2, Console.CursorTop + 4);
+					
+				}
+				else if (keyInfo.Key != ConsoleKey.NumPad7)
+				{
+					Console.SetCursorPosition(Console.CursorLeft + 4, Console.CursorTop + 0);
+					
+				}
+				else if (keyInfo.Key != ConsoleKey.NumPad8)
+				{
+					Console.SetCursorPosition(Console.CursorLeft + 4, Console.CursorTop + 2);
+					
+				}				
+				else if (keyInfo.Key != ConsoleKey.NumPad9)
+				{
+					Console.SetCursorPosition(Console.CursorLeft + 4, Console.CursorTop + 4);
+					
+				}
+
 			}
 
+			Console.ReadLine();
 		}
 	}
 }
