@@ -11,31 +11,28 @@ namespace TicTacToe
 		static void Main(string[] args)
 		{
 			Console.SetWindowSize(60, 30);
-			ConsoleKeyInfo info = Console.ReadKey();
-			int index = 0;
-			while (Console.ReadKey().Key != ConsoleKey.Escape)
+			ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+			while (keyInfo.Key != ConsoleKey.Escape)
 			{
-				
-				if (info.Key == ConsoleKey.DownArrow)
+				keyInfo = Console.ReadKey(true);
+				if (keyInfo.Key == ConsoleKey.UpArrow)
 				{
-					Console.SetCursorPosition(0, index + 1);
+					Console.SetCursorPosition(Console.CursorLeft , Console.CursorTop - 1);
 				}
-				else if (info.Key == ConsoleKey.UpArrow)
+				else if (keyInfo.Key == ConsoleKey.DownArrow)
 				{
-					Console.SetCursorPosition(0, index -1);
+					Console.SetCursorPosition(Console.CursorLeft , Console.CursorTop + 1);
 				}
-				else if (info.Key == ConsoleKey.RightArrow)
+				else if (keyInfo.Key == ConsoleKey.LeftArrow)
 				{
-					Console.SetCursorPosition(index +1, 0);
+					Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
 				}
-				else if (info.Key == ConsoleKey.LeftArrow)
+				else if (keyInfo.Key == ConsoleKey.RightArrow)
 				{
-					Console.SetCursorPosition(index -1, 0);
+					Console.SetCursorPosition(Console.CursorLeft +1 , Console.CursorTop);
 				}
-				index= index+1;
-				
-				info = Console.ReadKey();
 			}
+
 		}
 	}
 }

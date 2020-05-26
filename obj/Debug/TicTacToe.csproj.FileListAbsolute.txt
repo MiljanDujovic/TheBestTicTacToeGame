@@ -4,3 +4,9 @@ C:\Users\Miljan\Desktop\Project\TheBestTicTacToeGame\TicTacToe\bin\Debug\TicTacT
 C:\Users\Miljan\Desktop\Project\TheBestTicTacToeGame\TicTacToe\bin\Debug\TicTacToe.pdb
 C:\Users\Miljan\Desktop\Project\TheBestTicTacToeGame\TicTacToe\obj\Debug\TicTacToe.exe
 C:\Users\Miljan\Desktop\Project\TheBestTicTacToeGame\TicTacToe\obj\Debug\TicTacToe.pdb
+C:\Users\Miljan\Desktop\Project\TheBestTicTacToeGame\bin\Debug\TicTacToe.exe.config
+C:\Users\Miljan\Desktop\Project\TheBestTicTacToeGame\bin\Debug\TicTacToe.exe
+C:\Users\Miljan\Desktop\Project\TheBestTicTacToeGame\bin\Debug\TicTacToe.pdb
+C:\Users\Miljan\Desktop\Project\TheBestTicTacToeGame\obj\Debug\TicTacToe.csprojAssemblyReference.cache
+C:\Users\Miljan\Desktop\Project\TheBestTicTacToeGame\obj\Debug\TicTacToe.exe
+C:\Users\Miljan\Desktop\Project\TheBestTicTacToeGame\obj\Debug\TicTacToe.pdb
