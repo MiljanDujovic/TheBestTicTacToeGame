@@ -8,25 +8,26 @@ namespace TicTacToe
 {
 	class XO
 	{
+		
 		static public void PrintTheme()
 		{
 			for (int i = 0; i < 5; i++)
 			{
 				for (int j = 0; j < 5; j++)
 				{
-					if (i==0 & j==0)
+					if (i == 0 & j == 0)
 					{
 						Console.Write(" ");
 					}
-					else if (i==0 & j==2)
+					else if (i == 0 & j == 2)
 					{
 						Console.Write(" ");
 					}
-					else if (i==0 & j==4)
+					else if (i == 0 & j == 4)
 					{
 						Console.Write(" ");
 					}
-					else if (i==2 & j==0)
+					else if (i == 2 & j == 0)
 					{
 						Console.Write(" ");
 					}
@@ -55,7 +56,7 @@ namespace TicTacToe
 				Console.WriteLine();
 			}
 		}
-		static public void PrintXO(ConsoleKeyInfo keyInfo)
+		static public void PrintX(ConsoleKeyInfo keyInfo)
 		{
 			if (keyInfo.Key == ConsoleKey.NumPad1)
 			{
@@ -101,50 +102,16 @@ namespace TicTacToe
 			{
 				Console.SetCursorPosition(4, 0); Console.WriteLine("X");
 			}
-			if (keyInfo.Key == ConsoleKey.Q)
-			{
-				Console.SetCursorPosition(0, 0); Console.WriteLine("O");
 
-			}
-			else if (keyInfo.Key == ConsoleKey.W)
-			{
-				Console.SetCursorPosition(2, 0); Console.WriteLine("O");
+		}
+		static public void PrintO()
+		{
+			Random rnd = new Random();
+			int[] setofnumbers = { 0, 2, 4 };
+			Console.SetCursorPosition(setofnumbers[rnd.Next(setofnumbers[0], setofnumbers.Length)],setofnumbers[rnd.Next(setofnumbers[0], setofnumbers.Length)]); 
+			Console.WriteLine("O");
 
-			}
-			else if (keyInfo.Key == ConsoleKey.E)
-			{
-				Console.SetCursorPosition(4, 0); Console.WriteLine("O");
-
-			}
-			else if (keyInfo.Key == ConsoleKey.A)
-			{
-				Console.SetCursorPosition(0, 2); Console.WriteLine("O");
-
-			}
-			else if (keyInfo.Key == ConsoleKey.S)
-			{
-				Console.SetCursorPosition(2, 2); Console.WriteLine("O");
-
-			}
-			else if (keyInfo.Key == ConsoleKey.D)
-			{
-				Console.SetCursorPosition(4, 2); Console.WriteLine("O");
-
-			}
-			else if (keyInfo.Key == ConsoleKey.Z)
-			{
-				Console.SetCursorPosition(0, 4); Console.WriteLine("O");
-
-			}
-			else if (keyInfo.Key == ConsoleKey.X)
-			{
-				Console.SetCursorPosition(2, 4); Console.WriteLine("O");
-
-			}
-			else if (keyInfo.Key == ConsoleKey.C)
-			{
-				Console.SetCursorPosition(4, 4); Console.WriteLine("O");
-			}
+			
 		}
 	}
 	class Program
@@ -152,6 +119,7 @@ namespace TicTacToe
 		static void Main(string[] args)
 		{
 			Console.SetWindowSize(60, 30);
+			XO.PrintTheme();
 			ConsoleKeyInfo keyInfo = Console.ReadKey(true);
 			//while (keyInfo.Key != ConsoleKey.Escape)
 			//{
@@ -173,16 +141,16 @@ namespace TicTacToe
 			//		Console.SetCursorPosition(Console.CursorLeft +1 , Console.CursorTop);
 			//	}
 			//}
-
-			XO.PrintTheme();
+			Random rnd = new Random();
+			
 			while (keyInfo.Key != ConsoleKey.Escape)
 			{
 
-				XO.PrintXO(keyInfo);
+				XO.PrintX(keyInfo);
+				XO.PrintO();
 				keyInfo = Console.ReadKey(true);
 
 			}
-
 		}
 	}
 }
