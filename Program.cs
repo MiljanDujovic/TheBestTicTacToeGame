@@ -35,55 +35,54 @@ namespace TicTacToe
 			while (keyInfo.Key != ConsoleKey.Escape)
 			{
 				keyInfo = Console.ReadKey(true);
-				if (keyInfo.Key != ConsoleKey.NumPad1)
+				if (keyInfo.Key == ConsoleKey.NumPad1)
 				{
-					Console.SetCursorPosition(Console.CursorLeft + 0, Console.CursorTop + 0);
+					Console.SetCursorPosition( 0,  0);
 					
 				}
-				else if (keyInfo.Key != ConsoleKey.NumPad2)
+				else if (keyInfo.Key == ConsoleKey.NumPad2)
 				{
-					Console.SetCursorPosition(Console.CursorLeft + 0, Console.CursorTop + 2);
+					Console.SetCursorPosition( 0,  2);
 					
 				}
-				else if (keyInfo.Key != ConsoleKey.NumPad3)
+				else if (keyInfo.Key == ConsoleKey.NumPad3)
 				{
-					Console.SetCursorPosition(Console.CursorLeft + 0, Console.CursorTop + 4);
+					Console.SetCursorPosition( 0,  4);
 					
 				}
-				else if (keyInfo.Key != ConsoleKey.NumPad4)
+				else if (keyInfo.Key == ConsoleKey.NumPad4)
 				{
-					Console.SetCursorPosition(Console.CursorLeft + 2, Console.CursorTop + 0);
+					Console.SetCursorPosition( 2,  0);
 					
 				}
-				else if (keyInfo.Key != ConsoleKey.NumPad5)
+				else if (keyInfo.Key == ConsoleKey.NumPad5)
 				{
-					Console.SetCursorPosition(Console.CursorLeft + 2, Console.CursorTop + 2);
+					Console.SetCursorPosition(2,  2);
 					
 				}
-				else if (keyInfo.Key != ConsoleKey.NumPad6)
+				else if (keyInfo.Key == ConsoleKey.NumPad6)
 				{
-					Console.SetCursorPosition(Console.CursorLeft + 2, Console.CursorTop + 4);
+					Console.SetCursorPosition( 2,  4);
 					
 				}
-				else if (keyInfo.Key != ConsoleKey.NumPad7)
+				else if (keyInfo.Key == ConsoleKey.NumPad7)
 				{
-					Console.SetCursorPosition(Console.CursorLeft + 4, Console.CursorTop + 0);
+					Console.SetCursorPosition( 4,  0);
 					
 				}
-				else if (keyInfo.Key != ConsoleKey.NumPad8)
+				else if (keyInfo.Key == ConsoleKey.NumPad8)
 				{
-					Console.SetCursorPosition(Console.CursorLeft + 4, Console.CursorTop + 2);
+					Console.SetCursorPosition( 4,  2);
 					
 				}				
-				else if (keyInfo.Key != ConsoleKey.NumPad9)
+				else if (keyInfo.Key == ConsoleKey.NumPad9)
 				{
-					Console.SetCursorPosition(Console.CursorLeft + 4, Console.CursorTop + 4);
-					
+					Console.SetCursorPosition( 4,  4);
 				}
-
+				Console.WriteLine("X");
 			}
 
-			Console.ReadLine();
+
 		}
 	}
 }
