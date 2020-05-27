@@ -14,7 +14,43 @@ namespace TicTacToe
 			{
 				for (int j = 0; j < 5; j++)
 				{
-					Console.Write("░");
+					if (i==0 & j==0)
+					{
+						Console.Write(" ");
+					}
+					else if (i==0 & j==2)
+					{
+						Console.Write(" ");
+					}
+					else if (i==0 & j==4)
+					{
+						Console.Write(" ");
+					}
+					else if (i==2 & j==0)
+					{
+						Console.Write(" ");
+					}
+					else if (i == 2 & j == 2)
+					{
+						Console.Write(" ");
+					}
+					else if (i == 2 & j == 4)
+					{
+						Console.Write(" ");
+					}
+					else if (i == 4 & j == 0)
+					{
+						Console.Write(" ");
+					}
+					else if (i == 4 & j == 2)
+					{
+						Console.Write(" ");
+					}
+					else if (i == 4 & j == 4)
+					{
+						Console.Write(" ");
+					}
+					else Console.Write("░");
 				}
 				Console.WriteLine();
 			}
