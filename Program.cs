@@ -6,6 +6,57 @@ using System.Threading.Tasks;
 
 namespace TicTacToe
 {
+	class X
+	{
+		static public void Print(ConsoleKeyInfo keyInfo)
+		{
+				if (keyInfo.Key == ConsoleKey.NumPad1)
+				{
+					Console.SetCursorPosition( 0,  0);
+					
+				}
+				else if (keyInfo.Key == ConsoleKey.NumPad2)
+				{
+					Console.SetCursorPosition( 2,  0);
+					
+				}
+				else if (keyInfo.Key == ConsoleKey.NumPad3)
+				{
+					Console.SetCursorPosition( 4,  0);
+					
+				}
+				else if (keyInfo.Key == ConsoleKey.NumPad4)
+				{
+					Console.SetCursorPosition( 0,  2);
+					
+				}
+				else if (keyInfo.Key == ConsoleKey.NumPad5)
+				{
+					Console.SetCursorPosition(2,  2);
+					
+				}
+				else if (keyInfo.Key == ConsoleKey.NumPad6)
+				{
+					Console.SetCursorPosition( 4,  2);
+					
+				}
+				else if (keyInfo.Key == ConsoleKey.NumPad7)
+				{
+					Console.SetCursorPosition( 0,  4);
+					
+				}
+				else if (keyInfo.Key == ConsoleKey.NumPad8)
+				{
+					Console.SetCursorPosition( 2,  4);
+					
+				}				
+				else if (keyInfo.Key == ConsoleKey.NumPad9)
+				{
+					Console.SetCursorPosition( 4,  4);
+				}
+				Console.WriteLine("X");
+		}
+	}
 	class Program
 	{
 		static void Main(string[] args)
@@ -35,51 +86,7 @@ namespace TicTacToe
 			while (keyInfo.Key != ConsoleKey.Escape)
 			{
 				keyInfo = Console.ReadKey(true);
-				if (keyInfo.Key == ConsoleKey.NumPad1)
-				{
-					Console.SetCursorPosition( 0,  0);
-					
-				}
-				else if (keyInfo.Key == ConsoleKey.NumPad2)
-				{
-					Console.SetCursorPosition( 0,  2);
-					
-				}
-				else if (keyInfo.Key == ConsoleKey.NumPad3)
-				{
-					Console.SetCursorPosition( 0,  4);
-					
-				}
-				else if (keyInfo.Key == ConsoleKey.NumPad4)
-				{
-					Console.SetCursorPosition( 2,  0);
-					
-				}
-				else if (keyInfo.Key == ConsoleKey.NumPad5)
-				{
-					Console.SetCursorPosition(2,  2);
-					
-				}
-				else if (keyInfo.Key == ConsoleKey.NumPad6)
-				{
-					Console.SetCursorPosition( 2,  4);
-					
-				}
-				else if (keyInfo.Key == ConsoleKey.NumPad7)
-				{
-					Console.SetCursorPosition( 4,  0);
-					
-				}
-				else if (keyInfo.Key == ConsoleKey.NumPad8)
-				{
-					Console.SetCursorPosition( 4,  2);
-					
-				}				
-				else if (keyInfo.Key == ConsoleKey.NumPad9)
-				{
-					Console.SetCursorPosition( 4,  4);
-				}
-				Console.WriteLine("X");
+				X.Print(keyInfo);
 			}
 
 
