@@ -8,6 +8,17 @@ namespace TicTacToe
 {
 	class XO
 	{
+		static public void PrintTheme()
+		{
+			for (int i = 0; i < 5; i++)
+			{
+				for (int j = 0; j < 5; j++)
+				{
+					Console.Write("░");
+				}
+				Console.WriteLine();
+			}
+		}
 		static public void PrintXO(ConsoleKeyInfo keyInfo)
 		{
 			if (keyInfo.Key == ConsoleKey.NumPad1)
@@ -126,13 +137,15 @@ namespace TicTacToe
 			//		Console.SetCursorPosition(Console.CursorLeft +1 , Console.CursorTop);
 			//	}
 			//}
+
+			XO.PrintTheme();
 			while (keyInfo.Key != ConsoleKey.Escape)
 			{
-				keyInfo = Console.ReadKey(true);
+
 				XO.PrintXO(keyInfo);
+				keyInfo = Console.ReadKey(true);
 
 			}
-
 
 		}
 	}
