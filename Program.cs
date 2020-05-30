@@ -8,7 +8,7 @@ namespace TicTacToe
 {
 	class XO
 	{
-		
+
 		static public void PrintTheme()
 		{
 			for (int i = 0; i < 5; i++)
@@ -61,69 +61,65 @@ namespace TicTacToe
 			if (keyInfo.Key == ConsoleKey.NumPad1)
 			{
 				Console.SetCursorPosition(0, 4); Console.WriteLine("X");
-
 			}
 			else if (keyInfo.Key == ConsoleKey.NumPad2)
 			{
 				Console.SetCursorPosition(2, 4); Console.WriteLine("X");
-
 			}
 			else if (keyInfo.Key == ConsoleKey.NumPad3)
 			{
 				Console.SetCursorPosition(4, 4); Console.WriteLine("X");
-
 			}
 			else if (keyInfo.Key == ConsoleKey.NumPad4)
 			{
 				Console.SetCursorPosition(0, 2); Console.WriteLine("X");
-
 			}
 			else if (keyInfo.Key == ConsoleKey.NumPad5)
 			{
 				Console.SetCursorPosition(2, 2); Console.WriteLine("X");
-
 			}
 			else if (keyInfo.Key == ConsoleKey.NumPad6)
 			{
 				Console.SetCursorPosition(4, 2); Console.WriteLine("X");
-
 			}
 			else if (keyInfo.Key == ConsoleKey.NumPad7)
 			{
 				Console.SetCursorPosition(0, 0); Console.WriteLine("X");
-
 			}
 			else if (keyInfo.Key == ConsoleKey.NumPad8)
 			{
 				Console.SetCursorPosition(2, 0); Console.WriteLine("X");
-
 			}
 			else if (keyInfo.Key == ConsoleKey.NumPad9)
 			{
 				Console.SetCursorPosition(4, 0); Console.WriteLine("X");
 			}
 
+
 		}
 		static public void PrintO()
 		{
 			Random rnd = new Random();
 			int[] setofnumbers = { 0, 2, 4 };
-			Console.SetCursorPosition(setofnumbers[rnd.Next(setofnumbers[0], setofnumbers.Length)],setofnumbers[rnd.Next(setofnumbers[0], setofnumbers.Length)]); 
+			Console.SetCursorPosition(setofnumbers[rnd.Next(setofnumbers[0], setofnumbers.Length)], setofnumbers[rnd.Next(setofnumbers[0], setofnumbers.Length)]);
 			Console.WriteLine("O");
 
-			
+		}
+		static public void ContainsO()
+		{
+
 		}
 	}
+
 	class Program
 	{
 		static void Main(string[] args)
 		{
-			Console.SetWindowSize(60, 30);
 			XO.PrintTheme();
 			ConsoleKeyInfo keyInfo = Console.ReadKey(true);
 			//while (keyInfo.Key != ConsoleKey.Escape)
 			//{
-			//	keyInfo = Console.ReadKey(true);
+			//	keyInfo = Console.ReadKey(true); 
 			//	if (keyInfo.Key == ConsoleKey.UpArrow)
 			//	{
 			//		Console.SetCursorPosition(Console.CursorLeft , Console.CursorTop - 1);
@@ -141,8 +137,7 @@ namespace TicTacToe
 			//		Console.SetCursorPosition(Console.CursorLeft +1 , Console.CursorTop);
 			//	}
 			//}
-			Random rnd = new Random();
-			
+
 			while (keyInfo.Key != ConsoleKey.Escape)
 			{
 
@@ -154,3 +149,4 @@ namespace TicTacToe
 		}
 	}
 }
+
