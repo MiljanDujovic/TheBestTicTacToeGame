@@ -8,44 +8,31 @@ namespace OtaPuta
 {
 	class Program
 	{
-
-		static public Dictionary<int, char> StarTheme = new Dictionary<int, char>() { { 1, '*' }, { 2, '*' }, { 3, '*' } };
-		static public void Theme()
+		static public int[] row = new int[3];
+		static public void Print()
 		{
-			
-			foreach (var item in StarTheme)
+			for (int i = 0; i < 3; i++)
 			{
-				Console.Write(item.Value);
+				Console.Write(row[i]);
 			}
 		}
 		static public void OnInput(ConsoleKeyInfo keyInfo)
 		{
-			Console.Clear();
-			StarTheme[1] = '*'; StarTheme[2] = '*'; StarTheme[3] = '*';
-			int.TryParse(keyInfo.KeyChar.ToString(), out int result);
-			if (result == 1)
+			int.TryParse(keyInfo.KeyChar.ToString(), out int inputNumb);
+			if (inputNumb<=3&&inputNumb>=1)
 			{
-				StarTheme[1] = 'X';
-			}
-			else if (result == 2)
-			{
-				StarTheme[2] = 'X';
-			}
-			else if (result == 3)
-			{
-				StarTheme[3] = 'X';
+				Console.WriteLine(inputNumb);
 			}
 		}
 		static void Main(string[] args)
 		{
-			
+			Print();
 			ConsoleKeyInfo keyInfo = Console.ReadKey(true);
 			while (keyInfo.Key != ConsoleKey.Escape)
 			{
 				OnInput(keyInfo);
-				Theme();
 				keyInfo = Console.ReadKey(true);
-				
+
 			}
 
 		}
