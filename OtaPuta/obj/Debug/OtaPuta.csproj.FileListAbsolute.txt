@@ -1,0 +1,6 @@
+C:\Users\Miljan\Desktop\Project\OtaPuta\bin\Debug\OtaPuta.exe.config
+C:\Users\Miljan\Desktop\Project\OtaPuta\bin\Debug\OtaPuta.exe
+C:\Users\Miljan\Desktop\Project\OtaPuta\bin\Debug\OtaPuta.pdb
+C:\Users\Miljan\Desktop\Project\OtaPuta\obj\Debug\OtaPuta.csprojAssemblyReference.cache
+C:\Users\Miljan\Desktop\Project\OtaPuta\obj\Debug\OtaPuta.exe
+C:\Users\Miljan\Desktop\Project\OtaPuta\obj\Debug\OtaPuta.pdb
