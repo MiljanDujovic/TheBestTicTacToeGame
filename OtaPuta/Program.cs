@@ -8,7 +8,7 @@ namespace OtaPuta
 {
 	class Program
 	{
-		static public int[,] row = new int[3,3] { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
+		static public int[,] matrix = new int[3, 3];
 		static public void Print()
 		{
 			Console.Clear();
@@ -16,15 +16,15 @@ namespace OtaPuta
 			{
 				for (int j = 0; j < 3; j++)
 				{
-					if (row[i,j] == 0)
+					if (matrix[i, j] == 0)
 					{
 						Console.Write("*");
 					}
-					else if (row[i,j] == 1)
+					else if (matrix[i, j] == 1)
 					{
 						Console.Write("X");
 					}
-					else if (row[i,j] == 2)
+					else if (matrix[i, j] == 2)
 					{
 						Console.Write("O");
 					}
@@ -36,28 +36,15 @@ namespace OtaPuta
 		static public void OnInput(ConsoleKeyInfo keyInfo)
 		{
 			int.TryParse(keyInfo.KeyChar.ToString(), out int inputNumb);
-			if (inputNumb <= 3 && inputNumb >= 1)
+			if (inputNumb <= 9 && inputNumb >= 1)
 			{
-				if (row[0,inputNumb-1] ==0)
-				{
-					row[0,inputNumb - 1] = 1;
-				}
-				
+				int index = inputNumb - 1;
+				int row = 2 - index / 3;
+				int col = index % 3;
+				matrix[row, col] = 1;
+
 			}
-			else if (inputNumb>3 && inputNumb<=6)
-			{
-				if (row[1, inputNumb - 4] == 0)
-				{
-					row[1, inputNumb - 4] = 1;
-				}
-			}
-			else if (inputNumb > 6 && inputNumb <= 9)
-			{
-				if (row[2, inputNumb - 7] == 0)
-				{
-					row[2, inputNumb - 7] = 1;
-				}
-			}
+
 		}
 		static void Main(string[] args)
 		{
@@ -68,7 +55,6 @@ namespace OtaPuta
 				OnInput(keyInfo);
 				Print();
 			}
-
 		}
 	}
 }
