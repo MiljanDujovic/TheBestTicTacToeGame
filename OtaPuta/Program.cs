@@ -8,10 +8,11 @@ namespace OtaPuta
 {
 	class Program
 	{
-		static public int[] row = new int[3] { 0, 1, 2 };
+		static public int[] row = new int[5] { 0, 0, 0, 2, 0 };
 		static public void Print()
 		{
-			for (int i = 0; i < 3; i++)
+			Console.Clear();
+			for (int i = 0; i < row.Length; i++)
 			{
 				if (row[i] == 0)
 				{
@@ -30,9 +31,13 @@ namespace OtaPuta
 		static public void OnInput(ConsoleKeyInfo keyInfo)
 		{
 			int.TryParse(keyInfo.KeyChar.ToString(), out int inputNumb);
-			if (inputNumb <= 3 && inputNumb >= 1)
+			if (inputNumb <= 5 && inputNumb >= 1)
 			{
-
+				if (row[inputNumb-1] ==0)
+				{
+					row[inputNumb - 1] = 1;
+				}
+				
 			}
 		}
 		static void Main(string[] args)
@@ -42,6 +47,7 @@ namespace OtaPuta
 			while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Escape)
 			{
 				OnInput(keyInfo);
+				Print();
 			}
 
 		}
