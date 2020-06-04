@@ -36,15 +36,25 @@ namespace OtaPuta
 		static public void OnInput(ConsoleKeyInfo keyInfo)
 		{
 			int.TryParse(keyInfo.KeyChar.ToString(), out int inputNumb);
-			if (inputNumb <= 9 && inputNumb >= 1)
+			//if (inputNumb <= 9 && inputNumb >= 1)
+			//{
+			//	int index = inputNumb - 1;
+			//	int row = 2 - index / 3;
+			//	int col = index % 3;
+			//	matrix[row, col] = 1;
+
+			//}
+			int row = rnd.Next(0, 3);
+			int col = rnd.Next(0, 3);
+			if (inputNumb == 1)
 			{
-				int index = inputNumb - 1;
-				int row = 2 - index / 3;
-				int col = index % 3;
-				matrix[row, col] = 1;
+				if (matrix[row, col] == 0)
+				{
+					matrix[row, col] = 1;
+				}
+
 
 			}
-
 		}
 		static void Main(string[] args)
 		{
@@ -58,3 +68,4 @@ namespace OtaPuta
 		}
 	}
 }
+
