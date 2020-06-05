@@ -8,7 +8,25 @@ namespace OtaPuta
 {
 	class Program
 	{
+		enum XO
+		{
+			X = 1, O
+		}
 		static public int[,] matrix = new int[3, 3];
+		static public void RandomInput(int row, int col)
+		{
+
+				if (matrix[row, col] != 1)
+				{
+					matrix[row, col] = (int)XO.X;
+				}
+				else
+				{
+					RandomInput(rnd.Next(0, 3), rnd.Next(0, 3));
+				}
+			
+
+		}
 		static public void Print()
 		{
 			Console.Clear();
@@ -44,16 +62,9 @@ namespace OtaPuta
 			//	matrix[row, col] = 1;
 
 			//}
-			int row = rnd.Next(0, 3);
-			int col = rnd.Next(0, 3);
 			if (inputNumb == 1)
 			{
-				if (matrix[row, col] == 0)
-				{
-					matrix[row, col] = 1;
-				}
-
-
+				RandomInput(rnd.Next(0,3),rnd.Next(0,3));
 			}
 		}
 		static void Main(string[] args)
