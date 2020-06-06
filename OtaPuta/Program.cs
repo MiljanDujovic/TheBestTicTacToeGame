@@ -13,19 +13,27 @@ namespace OtaPuta
 			X = 1, O
 		}
 		static public int[,] matrix = new int[3, 3];
+		static public bool ifNotFilled()
+		{
+			
+
+
+			return count<=9;
+		}
 		static public void RandomInput(int row, int col)
 		{
 
-				if (matrix[row, col] != 1)
-				{
-					matrix[row, col] = (int)XO.X;
-				}
-				else
+			if (matrix[row, col] != 1)
+			{
+				matrix[row, col] = (int)XO.X;
+			}
+			else
+			{
+				if (ifNotFilled())
 				{
 					RandomInput(rnd.Next(0, 3), rnd.Next(0, 3));
 				}
-			
-
+			}
 		}
 		static public void Print()
 		{
@@ -51,6 +59,7 @@ namespace OtaPuta
 			}
 		}
 		static public Random rnd = new Random();
+		static public int count;
 		static public void OnInput(ConsoleKeyInfo keyInfo)
 		{
 			int.TryParse(keyInfo.KeyChar.ToString(), out int inputNumb);
@@ -64,7 +73,9 @@ namespace OtaPuta
 			//}
 			if (inputNumb == 1)
 			{
-				RandomInput(rnd.Next(0,3),rnd.Next(0,3));
+
+				RandomInput(rnd.Next(0, 3), rnd.Next(0, 3));
+				count++;
 			}
 		}
 		static void Main(string[] args)
