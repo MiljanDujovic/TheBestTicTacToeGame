@@ -13,12 +13,19 @@ namespace OtaPuta
 			X = 1, O
 		}
 		static public int[,] matrix = new int[3, 3];
-		static public bool ifNotFilled()
+		static public bool isNotFilled()
 		{
-			
-
-
-			return count<=9;
+			for (int i = 0; i < 3; i++)
+			{
+				for (int j = 0; j < 3; j++)
+				{
+					if (matrix[i, j] == 0)
+					{
+						return true;
+					}
+				}
+			}
+			return false;
 		}
 		static public void RandomInput(int row, int col)
 		{
@@ -29,7 +36,7 @@ namespace OtaPuta
 			}
 			else
 			{
-				if (ifNotFilled())
+				if (isNotFilled())
 				{
 					RandomInput(rnd.Next(0, 3), rnd.Next(0, 3));
 				}
@@ -73,9 +80,7 @@ namespace OtaPuta
 			//}
 			if (inputNumb == 1)
 			{
-
 				RandomInput(rnd.Next(0, 3), rnd.Next(0, 3));
-				count++;
 			}
 		}
 		static void Main(string[] args)
@@ -87,6 +92,8 @@ namespace OtaPuta
 				OnInput(keyInfo);
 				Print();
 			}
+			Console.WriteLine("Winner is: X!");
+			Console.ReadLine();
 		}
 	}
 }
