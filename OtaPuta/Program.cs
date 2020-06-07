@@ -30,9 +30,9 @@ namespace OtaPuta
 		static public void RandomInput(int row, int col)
 		{
 
-			if (matrix[row, col] != 1)
+			if (matrix[row, col] == 0)
 			{
-				matrix[row, col] = (int)XO.X;
+				matrix[row, col] = (int)XO.O;
 			}
 			else
 			{
@@ -66,21 +66,20 @@ namespace OtaPuta
 			}
 		}
 		static public Random rnd = new Random();
-		static public int count;
 		static public void OnInput(ConsoleKeyInfo keyInfo)
 		{
 			int.TryParse(keyInfo.KeyChar.ToString(), out int inputNumb);
-			//if (inputNumb <= 9 && inputNumb >= 1)
-			//{
-			//	int index = inputNumb - 1;
-			//	int row = 2 - index / 3;
-			//	int col = index % 3;
-			//	matrix[row, col] = 1;
-
-			//}
-			if (inputNumb == 1)
+			if (inputNumb <= 9 && inputNumb >= 1)
 			{
-				RandomInput(rnd.Next(0, 3), rnd.Next(0, 3));
+				int index = inputNumb - 1;
+				int row = 2 - index / 3;
+				int col = index % 3;
+				if (matrix[row, col] ==0)
+				{
+					matrix[row, col] = 1;
+					RandomInput(rnd.Next(0, 3), rnd.Next(0, 3));
+				}
+				
 			}
 		}
 		static void Main(string[] args)
