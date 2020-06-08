@@ -13,6 +13,72 @@ namespace OtaPuta
 			X = 1, O
 		}
 		static public int[,] matrix = new int[3, 3];
+		static public void WinCondition()
+		{
+			int count = 0;
+			for (int i = 0; i < 3; i++)
+			{
+				for (int j = 0; j < 3; j++)
+				{
+					if (i == j)
+					{
+						count++;
+						if (count == 3)
+						{
+							Console.WriteLine("X je pobednik po dijagonali");
+						}
+					}
+					if (i == 0 & (j == 0 || j==1 || j==2))
+					{
+						count++;
+						if (count == 3)
+						{
+							Console.WriteLine("X je pobednik u prvom redu");
+						}
+					}
+					if (i == 1 & (j == 0 || j == 1 || j == 2))
+					{
+						count++;
+						if (count == 3)
+						{
+							Console.WriteLine("X je pobednik u drugom redu");
+						}
+					}
+					if (i == 2 & (j == 0 || j == 1 || j == 2))
+					{
+						count++;
+						if (count == 3)
+						{
+							Console.WriteLine("X je pobednik u trecem redu");
+						}
+					}
+					if (j == 0 & (i == 0 || i == 1 || i == 2))
+					{
+						count++;
+						if (count == 3)
+						{
+							Console.WriteLine("X je pobednik u prvoj koloni");
+						}
+					}
+					if (j == 1 & (i == 0 || i == 1 || i == 2))
+					{
+						count++;
+						if (count == 3)
+						{
+							Console.WriteLine("X je pobednik u drugoj koloni");
+						}
+					}
+					if (j == 2 & (i == 0 || i == 1 || i == 2))
+					{
+						count++;
+						if (count == 3)
+						{
+							Console.WriteLine("X je pobednik trecoj koloni");
+						}
+					}
+				}
+			}
+		}
 		static public bool isNotFilled()
 		{
 			for (int i = 0; i < 3; i++)
@@ -78,8 +144,7 @@ namespace OtaPuta
 				{
 					matrix[row, col] = 1;
 					RandomInput(rnd.Next(0, 3), rnd.Next(0, 3));
-				}
-				
+				}	
 			}
 		}
 		static void Main(string[] args)
@@ -91,7 +156,8 @@ namespace OtaPuta
 				OnInput(keyInfo);
 				Print();
 			}
-			Console.WriteLine("Winner is: X!");
+			WinCondition();
+
 			Console.ReadLine();
 		}
 	}
