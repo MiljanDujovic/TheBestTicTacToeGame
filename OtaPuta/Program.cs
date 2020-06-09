@@ -15,97 +15,15 @@ namespace OtaPuta
 		static public int[,] matrix = new int[3, 3];
 		static public int GetWinner()
 		{
-			int countD0 = 0;
-			int countD1 = 0;
-			int countD2 = 0;
-			int countR0 = 0;
-			int countR1 = 0;
-			int countR2 = 0;
-			int countC0 = 0;
-			int countC1 = 0;
-			int countC2 = 0;
-			for (int i = 0; i < 3; i++)
-			{
-				for (int j = 0; j < 3; j++)
-				{
-					if ((i == 0 & j == 2) & matrix[i, j] == 1)
-					{
-						countD1++;
-
-					}
-					if ((i == 1 & j == 1) & matrix[i, j] == 1)
-					{
-						countD1++;
-
-					}
-					if ((i == 2 & j == 0) & matrix[i, j] == 1)
-					{
-						countD1++;
-
-					}
-					if (countD1 == 3)
-					{
-						return 1;
-					}
-					if (i == j & matrix[i, j] == 1)
-					{
-						countD0++;
-						if (countD0 == 3)
-						{
-							return 1;
-						}
-					}
-					if (i == 0 & matrix[i, j] == 1)
-					{
-						countR0++;
-						if (countR0 == 3)
-						{
-							return 1;
-						}
-					}
-					if (i == 1 & matrix[i, j] == 1)
-					{
-						countR1++;
-						if (countR1 == 3)
-						{
-							return 1;
-						}
-					}
-					if (i == 2 & matrix[i, j] == 1)
-					{
-						countR2++;
-						if (countR2 == 3)
-						{
-							return 1;
-						}
-					}
-					if (j == 0 & matrix[i, j] == 1)
-					{
-						countC0++;
-						if (countC0 == 3)
-						{
-							return 1;
-						}
-					}
-					if (j == 1 & matrix[i, j] == 1)
-					{
-						countC1++;
-						if (countC1 == 3)
-						{
-							return 1;
-						}
-					}
-					if (j == 2 & matrix[i, j] == 1)
-					{
-						countC2++;
-						if (countC2 == 3)
-						{
-							return 1;
-						}
-					}
-
-				}
-			}
+			int symbol = 1;
+			if (matrix[0, 0] == symbol) if (matrix[1, 1] == symbol) if (matrix[2, 2] == symbol) return symbol;
+			if (matrix[0, 0] == symbol) if (matrix[0, 1] == symbol) if (matrix[0, 2] == symbol) return symbol;
+			if (matrix[1, 0] == symbol) if (matrix[1, 1] == symbol) if (matrix[1, 2] == symbol) return symbol;
+			if (matrix[2, 0] == symbol) if (matrix[2, 1] == symbol) if (matrix[2, 2] == symbol) return symbol;
+			if (matrix[2, 0] == symbol) if (matrix[1, 1] == symbol) if (matrix[0, 2] == symbol) return symbol;
+			if (matrix[0, 0] == symbol) if (matrix[1, 0] == symbol) if (matrix[2, 0] == symbol) return symbol;
+			if (matrix[0, 1] == symbol) if (matrix[1, 1] == symbol) if (matrix[2, 1] == symbol) return symbol;
+			if (matrix[0, 2] == symbol) if (matrix[1, 2] == symbol) if (matrix[2, 2] == symbol) return symbol;
 			return 0;
 		}
 		static public bool isNotFilled()
