@@ -13,71 +13,100 @@ namespace OtaPuta
 			X = 1, O
 		}
 		static public int[,] matrix = new int[3, 3];
-		static public void WinCondition()
+		static public int GetWinner()
 		{
-			int count = 0;
+			int countD0 = 0;
+			int countD1 = 0;
+			int countD2 = 0;
+			int countR0 = 0;
+			int countR1 = 0;
+			int countR2 = 0;
+			int countC0 = 0;
+			int countC1 = 0;
+			int countC2 = 0;
 			for (int i = 0; i < 3; i++)
 			{
 				for (int j = 0; j < 3; j++)
 				{
-					if (i == j)
+					if ((i == 0 & j == 2) & matrix[i, j] == 1)
 					{
-						count++;
-						if (count == 3)
+						countD1++;
+
+					}
+					if ((i == 1 & j == 1) & matrix[i, j] == 1)
+					{
+						countD1++;
+
+					}
+					if ((i == 2 & j == 0) & matrix[i, j] == 1)
+					{
+						countD1++;
+
+					}
+					if (countD1 == 3)
+					{
+						return 1;
+					}
+					if (i == j & matrix[i, j] == 1)
+					{
+						countD0++;
+						if (countD0 == 3)
 						{
-							Console.WriteLine("X je pobednik po dijagonali");
+							return 1;
 						}
 					}
-					if (i == 0 & (j == 0 || j==1 || j==2))
+					if (i == 0 & matrix[i, j] == 1)
 					{
-						count++;
-						if (count == 3)
+						countR0++;
+						if (countR0 == 3)
 						{
-							Console.WriteLine("X je pobednik u prvom redu");
+							return 1;
 						}
 					}
-					if (i == 1 & (j == 0 || j == 1 || j == 2))
+					if (i == 1 & matrix[i, j] == 1)
 					{
-						count++;
-						if (count == 3)
+						countR1++;
+						if (countR1 == 3)
 						{
-							Console.WriteLine("X je pobednik u drugom redu");
+							return 1;
 						}
 					}
-					if (i == 2 & (j == 0 || j == 1 || j == 2))
+					if (i == 2 & matrix[i, j] == 1)
 					{
-						count++;
-						if (count == 3)
+						countR2++;
+						if (countR2 == 3)
 						{
-							Console.WriteLine("X je pobednik u trecem redu");
+							return 1;
 						}
 					}
-					if (j == 0 & (i == 0 || i == 1 || i == 2))
+					if (j == 0 & matrix[i, j] == 1)
 					{
-						count++;
-						if (count == 3)
+						countC0++;
+						if (countC0 == 3)
 						{
-							Console.WriteLine("X je pobednik u prvoj koloni");
+							return 1;
 						}
 					}
-					if (j == 1 & (i == 0 || i == 1 || i == 2))
+					if (j == 1 & matrix[i, j] == 1)
 					{
-						count++;
-						if (count == 3)
+						countC1++;
+						if (countC1 == 3)
 						{
-							Console.WriteLine("X je pobednik u drugoj koloni");
+							return 1;
 						}
 					}
-					if (j == 2 & (i == 0 || i == 1 || i == 2))
+					if (j == 2 & matrix[i, j] == 1)
 					{
-						count++;
-						if (count == 3)
+						countC2++;
+						if (countC2 == 3)
 						{
-							Console.WriteLine("X je pobednik trecoj koloni");
+							return 1;
 						}
 					}
+
 				}
 			}
+			return 0;
 		}
 		static public bool isNotFilled()
 		{
@@ -140,11 +169,11 @@ namespace OtaPuta
 				int index = inputNumb - 1;
 				int row = 2 - index / 3;
 				int col = index % 3;
-				if (matrix[row, col] ==0)
+				if (matrix[row, col] == 0)
 				{
 					matrix[row, col] = 1;
 					RandomInput(rnd.Next(0, 3), rnd.Next(0, 3));
-				}	
+				}
 			}
 		}
 		static void Main(string[] args)
@@ -156,7 +185,7 @@ namespace OtaPuta
 				OnInput(keyInfo);
 				Print();
 			}
-			WinCondition();
+			Console.WriteLine("Pobednik je: " + GetWinner());
 
 			Console.ReadLine();
 		}
