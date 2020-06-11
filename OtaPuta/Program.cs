@@ -11,15 +11,24 @@ namespace OtaPuta {
 		}
 		static public int[,] matrix = new int[3, 3];
 		static public int GetWinner() {
-			int symbol = 1;
-			if (matrix[0, 0] == symbol) if (matrix[1, 1] == symbol) if (matrix[2, 2] == symbol) return symbol;
-			if (matrix[0, 0] == symbol) if (matrix[0, 1] == symbol) if (matrix[0, 2] == symbol) return symbol;
-			if (matrix[1, 0] == symbol) if (matrix[1, 1] == symbol) if (matrix[1, 2] == symbol) return symbol;
-			if (matrix[2, 0] == symbol) if (matrix[2, 1] == symbol) if (matrix[2, 2] == symbol) return symbol;
-			if (matrix[2, 0] == symbol) if (matrix[1, 1] == symbol) if (matrix[0, 2] == symbol) return symbol;
-			if (matrix[0, 0] == symbol) if (matrix[1, 0] == symbol) if (matrix[2, 0] == symbol) return symbol;
-			if (matrix[0, 1] == symbol) if (matrix[1, 1] == symbol) if (matrix[2, 1] == symbol) return symbol;
-			if (matrix[0, 2] == symbol) if (matrix[1, 2] == symbol) if (matrix[2, 2] == symbol) return symbol;
+			int symbolX = 1;
+			int symbolO = 2;
+			if (matrix[0, 0] == symbolX) if (matrix[1, 1] == symbolX) if (matrix[2, 2] == symbolX) return symbolX;
+			if (matrix[0, 0] == symbolO) if (matrix[1, 1] == symbolO) if (matrix[2, 2] == symbolO) return symbolO;
+			if (matrix[0, 0] == symbolX) if (matrix[0, 1] == symbolX) if (matrix[0, 2] == symbolX) return symbolX;
+			if (matrix[0, 0] == symbolO) if (matrix[0, 1] == symbolO) if (matrix[0, 2] == symbolO) return symbolO;
+			if (matrix[1, 0] == symbolX) if (matrix[1, 1] == symbolX) if (matrix[1, 2] == symbolX) return symbolX;
+			if (matrix[1, 0] == symbolO) if (matrix[1, 1] == symbolO) if (matrix[1, 2] == symbolO) return symbolO;
+			if (matrix[2, 0] == symbolX) if (matrix[2, 1] == symbolX) if (matrix[2, 2] == symbolX) return symbolX;
+			if (matrix[2, 0] == symbolO) if (matrix[2, 1] == symbolO) if (matrix[2, 2] == symbolO) return symbolO;
+			if (matrix[2, 0] == symbolX) if (matrix[1, 1] == symbolX) if (matrix[0, 2] == symbolX) return symbolX;
+			if (matrix[2, 0] == symbolO) if (matrix[1, 1] == symbolO) if (matrix[0, 2] == symbolO) return symbolO;
+			if (matrix[0, 0] == symbolX) if (matrix[1, 0] == symbolX) if (matrix[2, 0] == symbolX) return symbolX;
+			if (matrix[0, 0] == symbolO) if (matrix[1, 0] == symbolO) if (matrix[2, 0] == symbolO) return symbolO;
+			if (matrix[0, 1] == symbolX) if (matrix[1, 1] == symbolX) if (matrix[2, 1] == symbolX) return symbolX;
+			if (matrix[0, 1] == symbolO) if (matrix[1, 1] == symbolO) if (matrix[2, 1] == symbolO) return symbolO;
+			if (matrix[0, 2] == symbolX) if (matrix[1, 2] == symbolX) if (matrix[2, 2] == symbolX) return symbolX;
+			if (matrix[0, 2] == symbolO) if (matrix[1, 2] == symbolO) if (matrix[2, 2] == symbolO) return symbolO;
 			return 0;
 		}
 		static public bool isNotFilled() {
@@ -60,7 +69,21 @@ namespace OtaPuta {
 				}
 				Console.WriteLine();
 			}
-			Console.WriteLine("Pobednik je: " + GetWinner());
+			Console.Write("Pobednik je: ");
+			switch (GetWinner()) {
+				case 0:
+					Console.Write("Niko");
+					break;
+				case 1:
+					Console.Write("Iks");
+					break;
+				case 2:
+					Console.Write("Oks");
+					break;
+				default:
+					break;
+			}
+
 		}
 		static public Random rnd = new Random();
 		static public void OnInput(ConsoleKeyInfo keyInfo) {
